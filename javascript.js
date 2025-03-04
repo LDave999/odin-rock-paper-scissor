@@ -76,13 +76,18 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    playRound(getHumanChoice(), getComputerChoice());
-    console.log(`Your Score: ${humanScore}, Computer's Score: ${computerScore}`);
-}
 
-playGame();
-playGame();
-playGame();
-playGame();
-playGame();
+for (let x = 1; x <= 5; ) {
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
+
+    if (humanChoice === "Invalid Input") {
+        console.log("Invalid input. Please enter Rock, Paper, or Scissors.");
+        continue;
+    }
+    
+    playRound(humanChoice, computerChoice);
+    console.log(`Your Score: ${humanScore}, Computer's Score: ${computerScore}`);
+    x++;
+} 
+
